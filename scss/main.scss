@@ -1,0 +1,114 @@
+@import './config';
+
+html{
+    box-sizing: border-box;
+    font-size: 62.5%;
+}
+
+*, *::before, *::after{box-sizing: inherit;}
+
+body{
+    font-family: $font-primary;
+    background-color: #222;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+    height: auto;
+}
+
+.section-filter{
+    text-align: center;
+    margin: 1rem 0 2rem 0;
+    h2{
+        font-size: 4rem;
+        font-weight: 400;
+        color: whitesmoke;
+        text-transform: capitalize;
+    }
+    input{
+        border: none;
+        outline: none;
+        border-bottom: 2px solid #444;
+        background: none;
+        color: $white;
+        width: 35rem;
+        font-size: 2.5rem;
+    }
+}
+
+.flex{
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    align-items: center;
+    flex-direction: row;
+}
+
+.card{
+    background-color: whitesmoke;
+    width: 27rem;
+    margin: 1rem;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 3px 3px 4px rgba(0,0,0, .7);
+
+    &-header{
+        width: 100%;
+        display: block;
+    }
+
+    &-body{
+        @include flex-center;
+        border-bottom: 1px solid rgba(153,153,153,.4);
+        @include card-gradient;
+        color: $white;
+        
+        &-img{
+            width: 200px;
+            height: 200px;
+            border: 5px solid whitesmoke;
+            border-radius: 50%;
+            background-color: whitesmoke;
+        }
+
+        &-title{
+            margin-top: 2rem;
+            font-size: 2.7rem;
+            text-transform: capitalize;
+            color: whitesmoke;
+
+            span{
+                font-weight: 400;
+            }
+        }
+
+        &-text{
+            font-size: 2.1rem;
+            
+        }
+    }
+
+    &-footer{
+        display: flex;    
+        justify-content: space-around;
+    
+        &-social{
+            text-align: center;
+            margin: 2rem 0;
+    
+            h3{
+                font-size: 2rem;
+            }
+
+            p{
+                font-size: 1.5rem;
+                letter-spacing: 1px}
+        }
+    }
+}
+
+.filter{
+    visibility: hidden;
+    opacity: 0;
+    order: 1;
+}

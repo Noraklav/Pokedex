@@ -1,0 +1,149 @@
+html {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-size: 62.5%;
+}
+
+*, *::before, *::after {
+  -webkit-box-sizing: inherit;
+          box-sizing: inherit;
+}
+
+body {
+  font-family: "Turret Road", cursive;
+  background-color: #222;
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100%;
+  height: auto;
+}
+
+.section-filter {
+  text-align: center;
+  margin: 1rem 0 2rem 0;
+}
+
+.section-filter h2 {
+  font-size: 4rem;
+  font-weight: 400;
+  color: whitesmoke;
+  text-transform: capitalize;
+}
+
+.section-filter input {
+  border: none;
+  outline: none;
+  border-bottom: 2px solid #444;
+  background: none;
+  color: whitesmoke;
+  width: 35rem;
+  font-size: 2.5rem;
+}
+
+.flex {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+
+.card {
+  background-color: whitesmoke;
+  width: 27rem;
+  margin: 1rem;
+  border-radius: 15px;
+  overflow: hidden;
+  -webkit-box-shadow: 3px 3px 4px rgba(0, 0, 0, 0.7);
+          box-shadow: 3px 3px 4px rgba(0, 0, 0, 0.7);
+}
+
+.card-header {
+  width: 100%;
+  display: block;
+}
+
+.card-body {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  border-bottom: 1px solid rgba(153, 153, 153, 0.4);
+  background: black;
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(25%, black), color-stop(50%, #0c0c0c), color-stop(75%, #161616));
+  background: linear-gradient(180deg, black 25%, #0c0c0c 50%, #161616 75%);
+  color: whitesmoke;
+}
+
+.card-body-img {
+  width: 200px;
+  height: 200px;
+  border: 5px solid whitesmoke;
+  border-radius: 50%;
+  background-color: whitesmoke;
+}
+
+.card-body-title {
+  margin-top: 2rem;
+  font-size: 2.7rem;
+  text-transform: capitalize;
+  color: whitesmoke;
+}
+
+.card-body-title span {
+  font-weight: 400;
+}
+
+.card-body-text {
+  font-size: 2.1rem;
+}
+
+.card-footer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+.card-footer-social {
+  text-align: center;
+  margin: 2rem 0;
+}
+
+.card-footer-social h3 {
+  font-size: 2rem;
+}
+
+.card-footer-social p {
+  font-size: 1.5rem;
+  letter-spacing: 1px;
+}
+
+.filter {
+  visibility: hidden;
+  opacity: 0;
+  -webkit-box-ordinal-group: 2;
+      -ms-flex-order: 1;
+          order: 1;
+}
+/*# sourceMappingURL=main.css.map */
