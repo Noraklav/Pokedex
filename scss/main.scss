@@ -127,25 +127,15 @@ body{
             span{
                 text-transform: capitalize;
                 font-size: 2rem;
-                margin: 0 2rem;
+                font-weight: 700;
+                margin: 0 2rem 3rem;
             }
         }
     }
 }
 
-.btn{
-    display: block;
-    width: 100%;
-    height: 5rem;
-    font-family: $font-primary;
-    background: rgb(175, 8, 8);
-    border: none;
-    color: $white;
-    font-size: 2rem;
-    font-weight: 500;
-}
-
 .filter{
+    display: none;
     visibility: hidden;
     opacity: 0;
     order: 1;

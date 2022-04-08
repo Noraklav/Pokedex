@@ -17,18 +17,15 @@ const fetchData = async (id) =>{
             type1: data.types[0].type.name,
         }
 
-        if(data.types[1] == undefined){
-            data.types[1] = data.types[0]
-        }
+        if(data.types[1] == undefined) data.types[1] = ''
         else{
             const type2 = {type2: data.types[1].type.name}
             Object.assign(pokemon, type2)
         }
-
-        console.log(pokemon);
-
+        
         // Dibuja una tarjeta con el pokemon desde su id
         drawCard(pokemon)
+        // console.log(pokemon);
 }
 
 // Funcion para dibujar la carta con los aatos del pokemon
@@ -66,12 +63,12 @@ function filtrarPokemon(input, selector){
     }
 }
 
+
 // Funcion para imprimir la cantidad de pokemones segun el tamaño del array
-function printInDOM(){
-    const numerosParaImprimir = []
-    for(let x=1;x<=12;x++) numerosParaImprimir.push(x)
-    numerosParaImprimir.forEach(e => fetchData(e))
-}
+
+const number = parseInt(prompt('Cuantos pokemones quieres ver?'))
+
+function printInDOM(){for(let x=1;x<=number;x++) fetchData(x)}
 
 // Busca en card-filter todos los elementos que tengan la clase card
 filtrarPokemon('.card-filter', '.card')
