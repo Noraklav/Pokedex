@@ -120,6 +120,16 @@ body{
             h3{font-size: 2rem;}
             p{font-size: 1.5rem;letter-spacing: 1px}
         }
+
+        &-type{
+            display: flex;
+            justify-content: center;
+            span{
+                text-transform: capitalize;
+                font-size: 2rem;
+                margin: 0 2rem;
+            }
+        }
     }
 }
 

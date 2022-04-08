@@ -14,7 +14,18 @@ const fetchData = async (id) =>{
             attack: data.stats[1].base_stat,
             defense: data.stats[2].base_stat,
             special: data.stats[3].base_stat,
+            type1: data.types[0].type.name,
         }
+
+        if(data.types[1] == undefined){
+            data.types[1] = data.types[0]
+        }
+        else{
+            const type2 = {type2: data.types[1].type.name}
+            Object.assign(pokemon, type2)
+        }
+
+        console.log(pokemon);
 
         // Dibuja una tarjeta con el pokemon desde su id
         drawCard(pokemon)
@@ -34,6 +45,8 @@ function drawCard(pokemon){
     clone.querySelectorAll('.card-footer-social h3')[0].textContent = pokemon.attack + 'K'
     clone.querySelectorAll('.card-footer-social h3')[1].textContent = pokemon.special + 'K'
     clone.querySelectorAll('.card-footer-social h3')[2].textContent = pokemon.defense + 'K'
+    clone.querySelectorAll('.card-footer-type span')[0].textContent = pokemon.type1
+    clone.querySelectorAll('.card-footer-type span')[1].textContent = pokemon.type2
 
     fragment.appendChild(clone)
     flex.appendChild(fragment)
