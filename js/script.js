@@ -1,7 +1,4 @@
-const numerosParaImprimir = []
-for(let x=1;x<=20;x++) numerosParaImprimir.push(x)
-
-const DOMFlex = document.querySelector('.flex')
+const DOMFlex = document.getElementById('flex')
 
 const fetchData = async (id) =>{
         const resp = await fetch(`https://pokeapi.co/api/v2/pokemon/${id}`)
@@ -23,6 +20,7 @@ const fetchData = async (id) =>{
         drawCard(pokemon)
 }
 
+// Funcion para dibujar la carta con los aatos del pokemon
 function drawCard(pokemon){
     const flex = document.querySelector('.flex')
     const template = document.getElementById('card').content
@@ -41,26 +39,27 @@ function drawCard(pokemon){
     flex.appendChild(fragment)
 }
 
-
+// Funcion para filtrar si hay coincidencia en el selector con lo que se escribe en el input
 function filtrarPokemon(input, selector){
     document.onkeyup = (e) =>{
         if(e.target.matches(input)){
-            // console.log(e.target.value);
-            // Condicional para borrar lo que este en el input apretando escape
             if(e.key == 'Escape') e.target.value = ''
 
             // Filtro para buscar las coincidencias
-            document.querySelectorAll(selector).forEach(el =>el.textContent.toLowerCase().includes(e.target.value)
+            document.querySelectorAll(selector).forEach(el =>el.textContent.includes(e.target.value)
                 ?el.classList.remove('filter')
                 :el.classList.add('filter'))
         }
     }
 }
 
+// Funcion para imprimir la cantidad de pokemones segun el tamaño del array
+function printInDOM(){
+    const numerosParaImprimir = []
+    for(let x=1;x<=12;x++) numerosParaImprimir.push(x)
+    numerosParaImprimir.forEach(e => fetchData(e))
+}
+
 // Busca en card-filter todos los elementos que tengan la clase card
 filtrarPokemon('.card-filter', '.card')
-
-
-
-const printInDOM = () => numerosParaImprimir.forEach(e => fetchData(e))
 printInDOM()

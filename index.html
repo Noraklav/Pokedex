@@ -4,9 +4,11 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Estilos -->
     <link rel="stylesheet" href="scss/normalize.css">
     <link rel="stylesheet" href="scss/main.css">
-    <link rel="icon" href="#">
+    <link rel="icon" href="assets/icon.svg">
+    <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Turret+Road:wght@200;300;400;500;700;800&display=swap" rel="stylesheet"> 
@@ -14,41 +16,48 @@
 </head>
 <body>
 
-    <section class="section-filter">
-        <h2>Buscar Pokémon</h2>
-        <input type="search" placeholder="Buscar" class="card-filter">
+    <div class="colection">
+        <a href="#">Mi colección</a>
+    </div>
+
+    <section class="contenido-principal">
+        <section class="section-filter">
+            <h2>Buscar Pokémon</h2>
+            <input type="search" placeholder="Buscar" class="card-filter">
+        </section>
+    
+        <main class="flex"></main>
+    
+        <template id="card">
+            <article class="card">
+                <img src="assets/card-fondo-cut.jpg" alt="Header Tarjeta" class="card-header">
+                
+                <div class="card-body">
+                    <img src="assets/genshi-overwatch.jpg" alt="card-body-img" class="card-body-img"></img>
+                    <h1 class="card-body-title">Genshi Shimada<span>27</span></h1>
+                    <p class="card-body-text">Japan</p>
+                </div>
+                
+                <div class="card-footer">
+                    <div class="card-footer-social">
+                        <h3>45k</h3>
+                        <p>Ataque</p>
+                    </div>
+                    <!-- * -->
+                    <div class="card-footer-social">
+                        <h3>320k</h3>
+                        <p>Ataque especial</p>
+                    </div>
+                    <!-- * -->
+                    <div class="card-footer-social">
+                        <h3>23k</h3>
+                        <p>Defensa</p>
+                    </div>
+                </div>
+                <button class="btn" id="btn">Agregar a la colección</button>
+            </article>
+        </template>
     </section>
-
-    <main class="flex"></main>
-
-    <template id="card">
-        <article class="card">
-            <img src="assets/card-fondo-cut.jpg" alt="Header Tarjeta" class="card-header">
-            
-            <div class="card-body">
-                <img src="assets/genshi-overwatch.jpg" alt="" class="card-body-img"></img>
-                <h1 class="card-body-title">Genshi Shimada<span>27</span></h1>
-                <p class="card-body-text">Japan</p>
-            </div>
-            
-            <div class="card-footer">
-                <div class="card-footer-social">
-                    <h3>45k</h3>
-                    <p>Ataque</p>
-                </div>
-                <!-- * -->
-                <div class="card-footer-social">
-                    <h3>320k</h3>
-                    <p>Ataque especial</p>
-                </div>
-                <!-- * -->
-                <div class="card-footer-social">
-                    <h3>23k</h3>
-                    <p>Defensa</p>
-                </div>
-            </div>
-        </article>
-    </template>
     <script src="js/script.js"></script>
 </body>
 </html>

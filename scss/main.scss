@@ -8,12 +8,28 @@ html{
 *, *::before, *::after{box-sizing: inherit;}
 
 body{
+    display: flex;
+    flex-flow: column;
     font-family: $font-primary;
     background-color: #222;
     background-repeat: no-repeat;
     background-size: cover;
     width: 100%;
     height: auto;
+}
+
+.colection{
+    display: flex;
+    width: 100%;
+    justify-content: end;
+    a{
+        display: block;
+        font-family: $font-primary;
+        font-size: 2.4rem;
+        color: $white;
+        text-decoration: none;
+        margin: 1rem;
+    }
 }
 
 .section-filter{
@@ -25,6 +41,7 @@ body{
         color: whitesmoke;
         text-transform: capitalize;
     }
+
     input{
         border: none;
         outline: none;
@@ -51,6 +68,7 @@ body{
     border-radius: 15px;
     overflow: hidden;
     box-shadow: 3px 3px 4px rgba(0,0,0, .7);
+    pointer-events: none;
 
     &-header{
         width: 100%;
@@ -62,6 +80,7 @@ body{
         border-bottom: 1px solid rgba(153,153,153,.4);
         @include card-gradient;
         color: $white;
+        transition: all .3s ease-out;
         
         &-img{
             width: 200px;
@@ -91,20 +110,29 @@ body{
     &-footer{
         display: flex;    
         justify-content: space-around;
-    
-        &-social{
-            text-align: center;
-            margin: 2rem 0;
-    
-            h3{
-                font-size: 2rem;
-            }
 
-            p{
-                font-size: 1.5rem;
-                letter-spacing: 1px}
+        &-social{
+            display: flex;
+            flex-flow: column;
+            text-align: center;
+            margin: 1.5rem;
+            line-height: 1.5rem;
+            h3{font-size: 2rem;}
+            p{font-size: 1.5rem;letter-spacing: 1px}
         }
     }
+}
+
+.btn{
+    display: block;
+    width: 100%;
+    height: 5rem;
+    font-family: $font-primary;
+    background: rgb(175, 8, 8);
+    border: none;
+    color: $white;
+    font-size: 2rem;
+    font-weight: 500;
 }
 
 .filter{
