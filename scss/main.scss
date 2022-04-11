@@ -18,23 +18,18 @@ body{
     height: auto;
 }
 
-.colection{
-    display: flex;
+.welcome{
+    @include flex-center;
     width: 100%;
-    justify-content: end;
-    a{
-        display: block;
-        font-family: $font-primary;
-        font-size: 2.4rem;
-        color: $white;
-        text-decoration: none;
-        margin: 1rem;
-    }
+    height: 100vh;
+    color: $white;
+    h1{font-size: 15rem;}
+    p{font-size: 3rem;}
 }
 
 .section-filter{
     text-align: center;
-    margin: 1rem 0 2rem 0;
+    margin: 1rem 0 10rem 0;
     h2{
         font-size: 4rem;
         font-weight: 400;
@@ -48,7 +43,7 @@ body{
         border-bottom: 2px solid #444;
         background: none;
         color: $white;
-        width: 35rem;
+        width: 50rem;
         font-size: 2.5rem;
     }
 }

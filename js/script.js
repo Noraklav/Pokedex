@@ -1,5 +1,6 @@
-const DOMFlex = document.getElementById('flex')
+AOS.init();
 
+// Obetener valores desde la API
 const fetchData = async (id) =>{
         const resp = await fetch(`https://pokeapi.co/api/v2/pokemon/${id}`)
         const data = await resp.json()
@@ -22,21 +23,20 @@ const fetchData = async (id) =>{
             const type2 = {type2: data.types[1].type.name}
             Object.assign(pokemon, type2)
         }
-        
+
         // Dibuja una tarjeta con el pokemon desde su id
         drawCard(pokemon)
         // console.log(pokemon);
 }
 
 // Funcion para dibujar la carta con los aatos del pokemon
-function drawCard(pokemon){
+const drawCard = (pokemon) =>{
     const flex = document.querySelector('.flex')
     const template = document.getElementById('card').content
     const clone = template.cloneNode(true)
     const fragment = document.createDocumentFragment()
 
     clone.querySelector('.card-body-img').setAttribute('src', pokemon.imgCvg)
-
     clone.querySelector('.card-body-title').innerHTML = `${pokemon.name} <span>${pokemon.hp}hp</span>`
     clone.querySelector('.card-body-text').textContent = pokemon.xp + ' exp'
     clone.querySelectorAll('.card-footer-social h3')[0].textContent = pokemon.attack + 'K'
@@ -50,9 +50,9 @@ function drawCard(pokemon){
 }
 
 // Funcion para filtrar si hay coincidencia en el selector con lo que se escribe en el input
-function filtrarPokemon(input, selector){
+const filtrarPokemon = (input, selector) =>{
     document.onkeyup = (e) =>{
-        if(e.target.matches(input)){
+        if(e.target.matches(input.toLowerCase())){
             if(e.key == 'Escape') e.target.value = ''
 
             // Filtro para buscar las coincidencias
@@ -63,12 +63,14 @@ function filtrarPokemon(input, selector){
     }
 }
 
-
 // Funcion para imprimir la cantidad de pokemones segun el tamaño del array
-
-const number = parseInt(prompt('Cuantos pokemones quieres ver?'))
-
-function printInDOM(){for(let x=1;x<=number;x++) fetchData(x)}
+const printInDOM = () => {
+    let cont = 1
+    while(cont <= 100){
+        fetchData(cont)
+        cont++
+    }
+}
 
 // Busca en card-filter todos los elementos que tengan la clase card
 filtrarPokemon('.card-filter', '.card')

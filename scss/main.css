@@ -25,28 +25,36 @@ body {
   height: auto;
 }
 
-.colection {
+.welcome {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   width: 100%;
-  -webkit-box-pack: end;
-      -ms-flex-pack: end;
-          justify-content: end;
+  height: 100vh;
+  color: whitesmoke;
 }
 
-.colection a {
-  display: block;
-  font-family: "Turret Road", cursive;
-  font-size: 2.4rem;
-  color: whitesmoke;
-  text-decoration: none;
-  margin: 1rem;
+.welcome h1 {
+  font-size: 15rem;
+}
+
+.welcome p {
+  font-size: 3rem;
 }
 
 .section-filter {
   text-align: center;
-  margin: 1rem 0 2rem 0;
+  margin: 1rem 0 10rem 0;
 }
 
 .section-filter h2 {
@@ -62,7 +70,7 @@ body {
   border-bottom: 2px solid #444;
   background: none;
   color: whitesmoke;
-  width: 35rem;
+  width: 50rem;
   font-size: 2.5rem;
 }
 
