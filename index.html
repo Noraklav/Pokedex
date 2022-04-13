@@ -9,61 +9,26 @@
     <link rel="stylesheet" href="scss/main.css">
     <link rel="icon" href="assets/icon.svg">
     <!-- Libreria -->
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Turret+Road:wght@200;300;400;500;700;800&display=swap" rel="stylesheet"> 
     <title>Lista de Pokemons</title>
 </head>
+
 <body>
     <section class="contenido-principal">        
 
-        <div class="welcome">
-            <h1>Bienvenido</h1>
-            <p>Aquí veras un listado de 100 pokemones</p>
-        </div>
-
         <section class="section-filter">
             <h2>Buscar Pokémon</h2>
-            <input type="search" placeholder="Nombre, vida, clase..." class="card-filter">
+            <input type="search" placeholder="Nombre, vida, categoria..." class="card-filter">
         </section>
-    
-        <main class="flex"></main>
-    
-        <template id="card">
-            <article class="card" data-aos="flip-up">
-                <img src="assets/card-fondo-cut.jpg" alt="Header Tarjeta" class="card-header">
-                
-                <div class="card-body">
-                    <img src="assets/genshi-overwatch.jpg" alt="card-body-img" class="card-body-img"></img>
-                    <h1 class="card-body-title" data-aos="fade-up" data-aos-anchor-placement="center-bottom">Genshi Shimada<span>27</span></h1>
-                    <p class="card-body-text" data-aos="fade-up" data-aos-anchor-placement="center-bottom">Japan</p>
-                </div>
-                
-                <div class="card-footer" data-aos="fade-up">
-                    <div class="card-footer-social" data-aos="fade-up-right">
-                        <h3>45k</h3>
-                        <p>Ataque</p>
-                    </div>
-                    <!-- * -->
-                    <div class="card-footer-social" data-aos="fade-up">
-                        <h3>320k</h3>
-                        <p>Ataque especial</p>
-                    </div>
-                    <!-- * -->
-                    <div class="card-footer-social" data-aos="fade-up-left">
-                        <h3>23k</h3>
-                        <p>Defensa</p>
-                    </div>
-                </div>
-                <div class="card-footer-type">
-                    <span class="type1" data-aos="zoom-out-right">Magical</span>
-                    <span class="type2" data-aos="zoom-out-left">Physical</span>
-                </div>
-            </article>
-        </template>
+
+        <main class="flex">
+            <!-- Contenido agregado desde Js -->
+        </main>
     </section>
     <script src="js/script.js"></script>
 </body>

@@ -1,4 +1,4 @@
-AOS.init();
+
 
 // Obetener valores desde la API
 const fetchData = async (id) =>{
@@ -8,17 +8,21 @@ const fetchData = async (id) =>{
         // Creando el objeto pokemon
         const pokemon = {
             img: `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${data.id}.png`,
-            imgCvg: data.sprites.other.dream_world.front_default,
+            // imgCvg: data.sprites.other.dream_world.front_default,
+            imgCvg: data.sprites.front_default ,
             name: data.name,
             xp: data.base_experience,
             hp: data.stats[0].base_stat,
+            weight: data.weight,
             attack: data.stats[1].base_stat,
             defense: data.stats[2].base_stat,
             special: data.stats[3].base_stat,
             type1: data.types[0].type.name,
         }
 
-        if(data.types[1] == undefined) data.types[1] = ''
+        // console.log(data);
+
+        if(data.types[1] == undefined) data.types[1] = null
         else{
             const type2 = {type2: data.types[1].type.name}
             Object.assign(pokemon, type2)
@@ -32,27 +36,84 @@ const fetchData = async (id) =>{
 // Funcion para dibujar la carta con los aatos del pokemon
 const drawCard = (pokemon) =>{
     const flex = document.querySelector('.flex')
-    const template = document.getElementById('card').content
-    const clone = template.cloneNode(true)
-    const fragment = document.createDocumentFragment()
 
-    clone.querySelector('.card-body-img').setAttribute('src', pokemon.imgCvg)
-    clone.querySelector('.card-body-title').innerHTML = `${pokemon.name} <span>${pokemon.hp}hp</span>`
-    clone.querySelector('.card-body-text').textContent = pokemon.xp + ' exp'
-    clone.querySelectorAll('.card-footer-social h3')[0].textContent = pokemon.attack + 'K'
-    clone.querySelectorAll('.card-footer-social h3')[1].textContent = pokemon.special + 'K'
-    clone.querySelectorAll('.card-footer-social h3')[2].textContent = pokemon.defense + 'K'
-    clone.querySelectorAll('.card-footer-type span')[0].textContent = pokemon.type1
-    clone.querySelectorAll('.card-footer-type span')[1].textContent = pokemon.type2
+    // Card container
+    const card = document.createElement('div')
+    card.className = 'card'
+    
+    // Card Header
+    const cardHeader = document.createElement('img')
+    cardHeader.src = 'https://github.com/Noraklav/Pokedex/blob/main/assets/card-fondo-cut.jpg?raw=true'
+    cardHeader.className = 'card-header'
+    card.appendChild(cardHeader)
 
-    fragment.appendChild(clone)
-    flex.appendChild(fragment)
+    // Card Body
+    const cardBody = document.createElement('div')
+    cardBody.className = 'card-body'
+
+    // Imagen
+    const cardBodyImg = document.createElement('img')
+    cardBodyImg.className = 'card-body-img'
+    cardBodyImg.src = pokemon.imgCvg
+    
+    // Titulo
+    const cardBodyTitle = document.createElement('h1')
+    cardBodyTitle.className = 'card-body-title'
+    cardBodyTitle.textContent = `${pokemon.name} ${pokemon.hp}hp`
+
+    // XP
+    const cardXP = document.createElement('span')
+    cardXP.className = 'card-body-xp'
+    cardXP.textContent = `${pokemon.xp} XP`
+
+    // Footer
+    const cardInfo = document.createElement('div')
+    cardInfo.className = 'cardInfo'
+
+    let weight = String(pokemon.weight)
+    let length = weight.length
+    let lastChar = /[a-z]/.test(weight.slice(length-1)) ? weight.slice(length-1).toUpperCase() : weight.slice(length-1)
+    weight = [weight.slice(0, length-1), ",", lastChar].join('')
+
+
+    cardInfo.innerHTML = `
+        <div class="card-footer" >
+            <div class="card-footer-social">
+                <h3>${pokemon.attack}k</h3>
+                <p>Ataque</p>
+            </div>
+            <!-- * -->
+            <div class="card-footer-social" >
+                <h3>${pokemon.special}k</h3>
+                <p>Ataque especial</p>
+            </div>
+            <!-- * -->
+            <div class="card-footer-social">
+                <h3>${pokemon.defense}k</h3>
+                <p>Defensa</p>
+            </div>
+        </div>
+        <div class="card-footer-weight">
+            <span class="weight">Peso: <b>${weight} kg</b></span>
+        </div>
+        <div class="card-footer-type">
+            <span class="type1">${pokemon.type1}</span>
+            <span class="type2">${pokemon.type2 || ''}</span>
+        </div>
+    `
+    
+    cardBody.appendChild(cardBodyImg)
+    cardBody.appendChild(cardBodyTitle)
+    cardBody.appendChild(cardXP)
+    cardBody.appendChild(cardInfo)
+    card.appendChild(cardBody)
+    flex.appendChild(card)
 }
 
 // Funcion para filtrar si hay coincidencia en el selector con lo que se escribe en el input
 const filtrarPokemon = (input, selector) =>{
     document.onkeyup = (e) =>{
-        if(e.target.matches(input.toLowerCase())){
+        if(e.target.matches(input)){
             if(e.key == 'Escape') e.target.value = ''
 
             // Filtro para buscar las coincidencias
@@ -66,7 +127,7 @@ const filtrarPokemon = (input, selector) =>{
 // Funcion para imprimir la cantidad de pokemones segun el tamaño del array
 const printInDOM = () => {
     let cont = 1
-    while(cont <= 100){
+    while(cont <= 40){
         fetchData(cont)
         cont++
     }

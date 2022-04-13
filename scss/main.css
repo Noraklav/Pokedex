@@ -18,7 +18,7 @@ body {
       -ms-flex-flow: column;
           flex-flow: column;
   font-family: "Turret Road", cursive;
-  background-color: #222;
+  background-color: #201f2e;
   background-repeat: no-repeat;
   background-size: cover;
   width: 100%;
@@ -154,12 +154,19 @@ body {
   font-size: 2.1rem;
 }
 
+.card-body-xp {
+  font-size: 2.1rem;
+  margin-bottom: 2rem;
+}
+
 .card-footer {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -ms-flex-pack: distribute;
       justify-content: space-around;
+  background: whitesmoke;
+  color: #222;
 }
 
 .card-footer-social {
@@ -171,17 +178,34 @@ body {
       -ms-flex-flow: column;
           flex-flow: column;
   text-align: center;
-  margin: 1.5rem;
+  margin: 1.3rem;
   line-height: 1.5rem;
 }
 
 .card-footer-social h3 {
   font-size: 2rem;
+  margin: 1.3rem 0 .5rem;
 }
 
 .card-footer-social p {
   font-size: 1.5rem;
   letter-spacing: 1px;
+}
+
+.card-footer-weight {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  font-size: 2rem;
+  background: whitesmoke;
+  color: #222;
+}
+
+.card-footer-weight span {
+  margin: 0 0 2rem 0;
 }
 
 .card-footer-type {
@@ -191,13 +215,14 @@ body {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  margin-top: 2rem;
 }
 
 .card-footer-type span {
   text-transform: capitalize;
   font-size: 2rem;
   font-weight: 700;
-  margin: 0 2rem 3rem;
+  margin: 0 2rem 2rem;
 }
 
 .filter {
