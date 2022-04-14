@@ -121,7 +121,7 @@ const filtrarPokemon = (input, selector) =>{
 // Funcion para imprimir la cantidad de pokemones segun el tamaño del array
 const printInDOM = () => {
     let cont = 1
-    while(cont <= 40){
+    while(cont <= 75){
         fetchData(cont)
         cont++
     }
