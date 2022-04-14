@@ -20,7 +20,7 @@ const fetchData = async (id) =>{
             type1: data.types[0].type.name,
         }
 
-        // console.log(data);
+        console.log(data);
 
         if(data.types[1] == undefined) data.types[1] = null
         else{
@@ -40,12 +40,6 @@ const drawCard = (pokemon) =>{
     // Card container
     const card = document.createElement('div')
     card.className = 'card'
-    
-    // Card Header
-    const cardHeader = document.createElement('img')
-    cardHeader.src = 'https://github.com/Noraklav/Pokedex/blob/main/assets/card-fondo-cut.jpg?raw=true'
-    cardHeader.className = 'card-header'
-    card.appendChild(cardHeader)
 
     // Card Body
     const cardBody = document.createElement('div')

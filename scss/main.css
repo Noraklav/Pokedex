@@ -103,11 +103,6 @@ body {
   pointer-events: none;
 }
 
-.card-header {
-  width: 100%;
-  display: block;
-}
-
 .card-body {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -122,11 +117,11 @@ body {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  border-bottom: 1px solid rgba(153, 153, 153, 0.4);
   background: black;
   background: -webkit-gradient(linear, left top, left bottom, color-stop(25%, black), color-stop(50%, #0c0c0c), color-stop(75%, #161616));
   background: linear-gradient(180deg, black 25%, #0c0c0c 50%, #161616 75%);
   color: whitesmoke;
+  padding-top: 5rem;
   -webkit-transition: all .3s ease-out;
   transition: all .3s ease-out;
 }

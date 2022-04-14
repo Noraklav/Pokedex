@@ -65,16 +65,11 @@ body{
     box-shadow: 3px 3px 4px rgba(0,0,0, .7);
     pointer-events: none;
 
-    &-header{
-        width: 100%;
-        display: block;
-    }
-
     &-body{
         @include flex-center;
-        border-bottom: 1px solid rgba(153,153,153,.4);
         @include card-gradient;
         color: $white;
+        padding-top: 5rem;
         transition: all .3s ease-out;
         
         &-img{
