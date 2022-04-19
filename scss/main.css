@@ -22,10 +22,9 @@ body {
   background-repeat: no-repeat;
   background-size: cover;
   width: 100%;
-  height: auto;
 }
 
-.welcome {
+.primer-vista {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -40,20 +39,58 @@ body {
       -ms-flex-direction: column;
           flex-direction: column;
   width: 100%;
+}
+
+.primer-vista .reloj-intro {
   height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.primer-vista .reloj-intro h3 {
+  font-size: 8rem;
   color: whitesmoke;
 }
 
-.welcome h1 {
-  font-size: 15rem;
+.primer-vista .reloj-intro #clock {
+  font-size: 5rem;
+  color: whitesmoke;
+  letter-spacing: .5rem;
 }
 
-.welcome p {
-  font-size: 3rem;
+.primer-vista h1 {
+  text-align: center;
+  width: 100%;
+  height: 50vh;
+  font-size: 10rem;
+  color: whitesmoke;
 }
 
 .section-filter {
-  text-align: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   margin: 1rem 0 10rem 0;
 }
 
@@ -64,13 +101,19 @@ body {
   text-transform: capitalize;
 }
 
+.section-filter span {
+  font-size: 2rem;
+  color: whitesmoke;
+  margin-bottom: 2rem;
+}
+
 .section-filter input {
   border: none;
   outline: none;
   border-bottom: 2px solid #444;
   background: none;
   color: whitesmoke;
-  width: 50rem;
+  width: 40%;
   font-size: 2.5rem;
 }
 
@@ -90,13 +133,16 @@ body {
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
+  width: 100%;
+  height: auto;
+  margin-bottom: 10rem;
 }
 
 .card {
   background-color: whitesmoke;
   width: 27rem;
   margin: 1rem;
-  border-radius: 15px;
+  border-radius: 2rem;
   overflow: hidden;
   -webkit-box-shadow: 3px 3px 4px rgba(0, 0, 0, 0.7);
           box-shadow: 3px 3px 4px rgba(0, 0, 0, 0.7);
@@ -118,8 +164,8 @@ body {
       -ms-flex-direction: column;
           flex-direction: column;
   background: black;
-  background: -webkit-gradient(linear, left top, left bottom, color-stop(25%, black), color-stop(50%, #0c0c0c), color-stop(75%, #161616));
-  background: linear-gradient(180deg, black 25%, #0c0c0c 50%, #161616 75%);
+  background: -webkit-gradient(linear, left bottom, left top, color-stop(50%, black), color-stop(70%, #af0c0c));
+  background: linear-gradient(0deg, black 50%, #af0c0c 70%);
   color: whitesmoke;
   padding-top: 5rem;
   -webkit-transition: all .3s ease-out;
@@ -127,8 +173,8 @@ body {
 }
 
 .card-body-img {
-  width: 200px;
-  height: 200px;
+  width: 15rem;
+  height: 15rem;
   border: 5px solid whitesmoke;
   border-radius: 50%;
   background-color: whitesmoke;
@@ -160,6 +206,7 @@ body {
   display: flex;
   -ms-flex-pack: distribute;
       justify-content: space-around;
+  width: 100%;
   background: whitesmoke;
   color: #222;
 }
@@ -194,6 +241,7 @@ body {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  width: 100%;
   font-size: 2rem;
   background: whitesmoke;
   color: #222;
@@ -210,7 +258,12 @@ body {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  margin-top: 2rem;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100%;
+  color: #111;
+  background: whitesmoke;
 }
 
 .card-footer-type span {
@@ -227,5 +280,37 @@ body {
   -webkit-box-ordinal-group: 2;
       -ms-flex-order: 1;
           order: 1;
+}
+
+footer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100%;
+  height: 10vh;
+  background: whitesmoke;
+}
+
+footer i {
+  font-size: 2rem;
+}
+
+footer i a {
+  margin-left: 1rem;
+  text-decoration: none;
+  color: #222;
+  font-family: "Turret Road", cursive;
+  -webkit-transition: all .3s ease-in;
+  transition: all .3s ease-in;
+}
+
+footer i a:hover {
+  border-bottom: .2rem solid #222;
 }
 /*# sourceMappingURL=main.css.map */

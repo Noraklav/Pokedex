@@ -9,8 +9,8 @@
     <link rel="stylesheet" href="scss/main.css">
     <link rel="icon" href="assets/icon.svg">
     <!-- Libreria -->
-
-    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -19,17 +19,64 @@
 </head>
 
 <body>
-    <section class="contenido-principal">        
 
-        <section class="section-filter">
+    <div class="primer-vista">
+        <div class="reloj-intro">
+            <h3>Sabes que hora es...?</h1>
+            <div id="clock"></div>
+        </div>
+        <h1 data-aos="fade-up">Hora de descubrir Pokemones!!!</h1>
+    </div>
+
+    
+    <section class="contenido-principal">
+        <section class="section-filter" data-aos="flip-left">
             <h2>Buscar Pokémon</h2>
+            <span>Funciona solo minusculas (╯°□°）╯︵ ┻━┻</span>
             <input type="search" placeholder="Nombre, vida, categoria..." class="card-filter">
         </section>
 
-        <main class="flex">
+        <main class="flex" data-aos="flip-right">
             <!-- Contenido agregado desde Js -->
         </main>
     </section>
-    <script src="js/script.js"></script>
+
+    <footer>
+        <i class="fa-brands fa-github"><a href="https://github.com/Noraklav/Pokedex">Repositorio Super Epico</a></i>
+    </footer>
+
+    <!-- Hacer template -->
+    <template>
+        
+
+<div class="card">
+    <div class="card-body">
+        <img class="card-body-img" src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/2.png">
+        <h1 class="card-body-title">ivysaur 60hp</h1>
+        <span class="card-body-xp">142 XP</span>
+        <div class="card-footer">
+            <div class="card-footer-social">
+                <h3>62k</h3>
+                <p>Ataque</p>
+            </div>
+            <div class="card-footer-social">
+                <h3>80k</h3>
+                <p>Ataque Especial</p>
+            </div>
+            <div class="card-footer-social">
+                <h3>62k</h3>
+                <p>Defensa</p>
+            </div>
+        </div>
+        <div class="card-footer-weight"><span class="weight">Peso: <b>13,0 kg</b></span></div>
+        <div class="card-footer-type"><span class="type1">grass</span><span>poison</span></div>
+        </div>
+    </div>
+    </template>
+
+    <script src="https://kit.fontawesome.com/493cffd088.js" crossorigin="anonymous" type="text/javascript"></script>
+    <script src="./node_modules/moment/min/moment.min.js"></script>
+    <script src="js/script.js" type="text/javascript"></script>
+    <script src="js/clock.js" type="text/javascript"></script>
 </body>
 </html>

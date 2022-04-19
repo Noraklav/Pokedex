@@ -1,4 +1,7 @@
+AOS.init()
 
+// Funcion simple para ahorrar codigo
+const crearElemento = (str) => document.createElement(str)
 
 // Obetener valores desde la API
 const fetchData = async (id) =>{
@@ -8,7 +11,6 @@ const fetchData = async (id) =>{
         // Creando el objeto pokemon
         const pokemon = {
             img: `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${data.id}.png`,
-            // imgCvg: data.sprites.other.dream_world.front_default,
             imgCvg: data.sprites.front_default ,
             name: data.name,
             xp: data.base_experience,
@@ -17,10 +19,8 @@ const fetchData = async (id) =>{
             attack: data.stats[1].base_stat,
             defense: data.stats[2].base_stat,
             special: data.stats[3].base_stat,
-            type1: data.types[0].type.name,
+            type1: data.types[0].type.name
         }
-
-        console.log(data);
 
         if(data.types[1] == undefined) data.types[1] = null
         else{
@@ -30,7 +30,7 @@ const fetchData = async (id) =>{
 
         // Dibuja una tarjeta con el pokemon desde su id
         drawCard(pokemon)
-        // console.log(pokemon);
+        // console.log(data);
 }
 
 // Funcion para dibujar la carta con los aatos del pokemon
@@ -38,71 +38,112 @@ const drawCard = (pokemon) =>{
     const flex = document.querySelector('.flex')
 
     // Card container
-    const card = document.createElement('div')
+    const card = crearElemento('div')
     card.className = 'card'
 
     // Card Body
-    const cardBody = document.createElement('div')
+    const cardBody = crearElemento('div')
     cardBody.className = 'card-body'
 
     // Imagen
-    const cardBodyImg = document.createElement('img')
+    const cardBodyImg = crearElemento('img')
     cardBodyImg.className = 'card-body-img'
     cardBodyImg.src = pokemon.imgCvg
     
     // Titulo
-    const cardBodyTitle = document.createElement('h1')
+    const cardBodyTitle = crearElemento('h1')
     cardBodyTitle.className = 'card-body-title'
     cardBodyTitle.textContent = `${pokemon.name} ${pokemon.hp}hp`
 
     // XP
-    const cardXP = document.createElement('span')
+    const cardXP = crearElemento('span')
     cardXP.className = 'card-body-xp'
     cardXP.textContent = `${pokemon.xp} XP`
 
-    // Footer
-    const cardInfo = document.createElement('div')
-    cardInfo.className = 'cardInfo'
-
+    // Peso
     let weight = String(pokemon.weight)
     let length = weight.length
     let lastChar = /[a-z]/.test(weight.slice(length-1)) ? weight.slice(length-1).toUpperCase() : weight.slice(length-1)
     weight = [weight.slice(0, length-1), ",", lastChar].join('')
 
+    const pokePeso = crearElemento('div')
+    pokePeso.className = 'card-footer-weight'
+    const pokePesoSpan = crearElemento('span')
+    pokePesoSpan.className = 'weight'
+    pokePesoSpan.innerHTML = `Peso: <b>${weight} kg</b>`
+    pokePeso.appendChild(pokePesoSpan)
 
-    cardInfo.innerHTML = `
-        <div class="card-footer" >
-            <div class="card-footer-social">
-                <h3>${pokemon.attack}k</h3>
-                <p>Ataque</p>
-            </div>
-            <!-- * -->
-            <div class="card-footer-social" >
-                <h3>${pokemon.special}k</h3>
-                <p>Ataque especial</p>
-            </div>
-            <!-- * -->
-            <div class="card-footer-social">
-                <h3>${pokemon.defense}k</h3>
-                <p>Defensa</p>
-            </div>
-        </div>
-        <div class="card-footer-weight">
-            <span class="weight">Peso: <b>${weight} kg</b></span>
-        </div>
-        <div class="card-footer-type">
-            <span class="type1">${pokemon.type1}</span>
-            <span class="type2">${pokemon.type2 || ''}</span>
-        </div>
-    `
+
+    // Footer
+    const cardInfo = crearElemento('div')
+    cardInfo.className = 'card-footer'
+
+    // Ataque Contenedor
+    const divAttack = crearElemento('div')
+    divAttack.className = 'card-footer-social'
+    // h3
+    const h3Attack = crearElemento('h3')
+    h3Attack.innerHTML = pokemon.attack+'k'
+    divAttack.appendChild(h3Attack)
+    // p
+    const pAttack = crearElemento('p')
+    pAttack.innerHTML = 'Ataque'
+    divAttack.appendChild(pAttack)
     
+    // Ataque Especial Contenedor
+    const divSpecial = crearElemento('div')
+    divSpecial.className = 'card-footer-social'
+    // h3
+    const h3Special = crearElemento('h3')
+    h3Special.innerHTML = pokemon.special+'k'
+    divSpecial.appendChild(h3Special)
+    // p
+    const pSpecial = crearElemento('p')
+    pSpecial.innerHTML = 'Ataque Especial'
+    divSpecial.appendChild(pSpecial)
+    
+    // Defensa Contenedor
+    const divDefense = crearElemento('div')
+    divDefense.className = 'card-footer-social'
+    // h3
+    const h3Defense = crearElemento('h3')
+    h3Defense.innerHTML = pokemon.attack+'k'
+    divDefense.appendChild(h3Defense)
+    // p
+    const pDefense = crearElemento('p')
+    pDefense.innerHTML = 'Defensa'
+    divDefense.appendChild(pDefense)
+
+    // Tipos de Pokemon
+    const pokeType = crearElemento('div')
+    pokeType.className = 'card-footer-type'
+    // Tipo 1
+    const span1 = crearElemento('span')
+    span1.className = 'type1'
+    span1.innerHTML = `${pokemon.type1}`
+    // Tipo 2
+    const span2 = crearElemento('span')
+    span2.innerHTML = `${pokemon.type2 || pokemon.type1}`
+
+    // Agregando al DOM
+    pokeType.appendChild(span1)
+    pokeType.appendChild(span2)
+
+    cardInfo.appendChild(divAttack)
+    cardInfo.appendChild(divSpecial)
+    cardInfo.appendChild(divDefense)
+
     cardBody.appendChild(cardBodyImg)
     cardBody.appendChild(cardBodyTitle)
     cardBody.appendChild(cardXP)
     cardBody.appendChild(cardInfo)
+    cardBody.appendChild(pokePeso)
+    cardBody.appendChild(pokeType)
+
     card.appendChild(cardBody)
     flex.appendChild(card)
 }
+
 
 // Funcion para filtrar si hay coincidencia en el selector con lo que se escribe en el input
 const filtrarPokemon = (input, selector) =>{
@@ -118,10 +159,10 @@ const filtrarPokemon = (input, selector) =>{
     }
 }
 
-// Funcion para imprimir la cantidad de pokemones segun el tamaño del array
+// Funcion para imprimir la cantidad de pokemones
 const printInDOM = () => {
     let cont = 1
-    while(cont <= 75){
+    while(cont <= 10){
         fetchData(cont)
         cont++
     }

@@ -15,20 +15,30 @@ body{
     background-repeat: no-repeat;
     background-size: cover;
     width: 100%;
-    height: auto;
 }
 
-.welcome{
+.primer-vista{
     @include flex-center;
     width: 100%;
-    height: 100vh;
-    color: $white;
-    h1{font-size: 15rem;}
-    p{font-size: 3rem;}
+    
+    .reloj-intro{
+        height: 100vh;
+        @include flex-center;
+        h3{font-size: 8rem;color: $white;}
+        #clock{font-size: 5rem;color: $white;letter-spacing: .5rem;}
+    }
+
+    h1{
+        text-align: center;
+        width: 100%;
+        height: 50vh;
+        font-size: 10rem;
+        color: $white;
+    }
 }
 
 .section-filter{
-    text-align: center;
+    @include flex-center;
     margin: 1rem 0 10rem 0;
     h2{
         font-size: 4rem;
@@ -37,13 +47,19 @@ body{
         text-transform: capitalize;
     }
 
+    span{
+        font-size: 2rem;
+        color: $white;
+        margin-bottom: 2rem;
+    }
+
     input{
         border: none;
         outline: none;
         border-bottom: 2px solid #444;
         background: none;
         color: $white;
-        width: 50rem;
+        width: 40%;
         font-size: 2.5rem;
     }
 }
@@ -54,13 +70,16 @@ body{
     flex-wrap: wrap;
     align-items: center;
     flex-direction: row;
+    width: 100%;
+    height: auto;
+    margin-bottom: 10rem;
 }
 
 .card{
     background-color: whitesmoke;
     width: 27rem;
     margin: 1rem;
-    border-radius: 15px;
+    border-radius: 2rem;
     overflow: hidden;
     box-shadow: 3px 3px 4px rgba(0,0,0, .7);
     pointer-events: none;
@@ -73,8 +92,8 @@ body{
         transition: all .3s ease-out;
         
         &-img{
-            width: 200px;
-            height: 200px;
+            width: 15rem;
+            height: 15rem;
             border: 5px solid whitesmoke;
             border-radius: 50%;
             background-color: whitesmoke;
@@ -96,6 +115,7 @@ body{
     &-footer{
         display: flex;    
         justify-content: space-around;
+        width: 100%;
         background: $white;
         color: #222;
 
@@ -112,18 +132,20 @@ body{
         &-weight{
             display: flex;
             justify-content: center;
+            width: 100%;
             font-size: 2rem;
             background: $white;
             color: #222;
-            span{
-                margin: 0 0 2rem 0;
-            }
+            span{margin: 0 0 2rem 0;}
         }
 
         &-type{
             display: flex;
             justify-content: center;
-            margin-top: 2rem;
+            align-items: center;
+            width: 100%;
+            color: #111;
+            background: $white;
             span{
                 text-transform: capitalize;
                 font-size: 2rem;
@@ -139,4 +161,26 @@ body{
     visibility: hidden;
     opacity: 0;
     order: 1;
+}
+
+footer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 10vh;
+    background: $white;
+    i{
+        font-size: 2rem;
+        a{
+            margin-left: 1rem;
+            text-decoration: none;
+            color: #222;
+            font-family: $font-primary;
+            transition: all .3s ease-in;
+            &:hover{
+                border-bottom: .2rem solid #222;
+            }
+        }
+    }
 }
