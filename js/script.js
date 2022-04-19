@@ -162,7 +162,7 @@ const filtrarPokemon = (input, selector) =>{
 // Funcion para imprimir la cantidad de pokemones
 const printInDOM = () => {
     let cont = 1
-    while(cont <= 20){
+    while(cont <= 200){
         fetchData(cont)
         cont++
     }
