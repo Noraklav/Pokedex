@@ -19,24 +19,29 @@
 </head>
 
 <body>
+    <div class="surprise">
+        <button id="surprise-button"><i class="fa-solid fa-question"></i></button>
+    </div>
 
     <div class="primer-vista">
         <div class="reloj-intro">
             <h3>Sabes que hora es...?</h1>
             <div id="clock"></div>
         </div>
-        <h1 data-aos="fade-up">Hora de descubrir Pokemones!!!</h1>
+        <div class="primer-vista-text" data-aos="fade-up">
+            <h1>Hora de descubrir Pokemones!!!</h1>
+            <p>En este espacio veras una pokedex con la informacion basica de 200 pokemones</p>
+        </div>
     </div>
-
     
     <section class="contenido-principal">
         <section class="section-filter" data-aos="flip-left">
             <h2>Buscar Pokémon</h2>
-            <span>Funciona solo minusculas (╯°□°）╯︵ ┻━┻</span>
+            <span>Funciona solo con minusculas (╯°□°）╯︵ ┻━┻</span>
             <input type="search" placeholder="Nombre, vida, categoria..." class="card-filter">
         </section>
 
-        <main class="flex" data-aos="flip-right">
+        <main class="flex">
             <!-- Contenido agregado desde Js -->
         </main>
     </section>
@@ -44,35 +49,6 @@
     <footer>
         <i class="fa-brands fa-github"><a href="https://github.com/Noraklav/Pokedex">Repositorio Super Epico</a></i>
     </footer>
-
-    <!-- Hacer template -->
-    <template>
-        
-
-<div class="card">
-    <div class="card-body">
-        <img class="card-body-img" src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/2.png">
-        <h1 class="card-body-title">ivysaur 60hp</h1>
-        <span class="card-body-xp">142 XP</span>
-        <div class="card-footer">
-            <div class="card-footer-social">
-                <h3>62k</h3>
-                <p>Ataque</p>
-            </div>
-            <div class="card-footer-social">
-                <h3>80k</h3>
-                <p>Ataque Especial</p>
-            </div>
-            <div class="card-footer-social">
-                <h3>62k</h3>
-                <p>Defensa</p>
-            </div>
-        </div>
-        <div class="card-footer-weight"><span class="weight">Peso: <b>13,0 kg</b></span></div>
-        <div class="card-footer-type"><span class="type1">grass</span><span>poison</span></div>
-        </div>
-    </div>
-    </template>
 
     <script src="https://kit.fontawesome.com/493cffd088.js" crossorigin="anonymous" type="text/javascript"></script>
     <script src="./node_modules/moment/min/moment.min.js"></script>

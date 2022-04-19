@@ -31,7 +31,7 @@ const fetchData = async (id) =>{
         // Dibuja una tarjeta con el pokemon desde su id
         drawCard(pokemon)
         // console.log(data);
-}
+    }
 
 // Funcion para dibujar la carta con los aatos del pokemon
 const drawCard = (pokemon) =>{
@@ -162,11 +162,14 @@ const filtrarPokemon = (input, selector) =>{
 // Funcion para imprimir la cantidad de pokemones
 const printInDOM = () => {
     let cont = 1
-    while(cont <= 10){
+    while(cont <= 20){
         fetchData(cont)
         cont++
     }
 }
+
+// Boton sorpresa
+document.getElementById('surprise-button').onclick = () => window.location = 'https://youtu.be/dQw4w9WgXcQ'
 
 // Busca en card-filter todos los elementos que tengan la clase card
 filtrarPokemon('.card-filter', '.card')

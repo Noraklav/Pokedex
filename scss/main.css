@@ -24,6 +24,64 @@ body {
   width: 100%;
 }
 
+.surprise {
+  position: fixed;
+  padding: 2rem;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: end;
+}
+
+.surprise button {
+  cursor: pointer;
+  -webkit-transition: all .2s ease-in;
+  transition: all .2s ease-in;
+  width: 5rem;
+  height: 5rem;
+  border: 4px solid #201f2e;
+  border-radius: 50%;
+  -webkit-animation: rotation 3s linear infinite;
+          animation: rotation 3s linear infinite;
+}
+
+.surprise button:hover {
+  color: whitesmoke;
+  background: #222;
+  border: 3px solid whitesmoke;
+}
+
+.surprise button i {
+  color: #222;
+  font-size: 3rem;
+  font-weight: 700;
+}
+
+@-webkit-keyframes rotation {
+  0% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+
+@keyframes rotation {
+  0% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+
 .primer-vista {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -59,7 +117,7 @@ body {
 }
 
 .primer-vista .reloj-intro h3 {
-  font-size: 8rem;
+  font-size: 5rem;
   color: whitesmoke;
 }
 
@@ -69,11 +127,32 @@ body {
   letter-spacing: .5rem;
 }
 
-.primer-vista h1 {
-  text-align: center;
-  width: 100%;
+.primer-vista-text {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   height: 50vh;
-  font-size: 10rem;
+}
+
+.primer-vista-text h1 {
+  font-size: 5rem;
+  color: whitesmoke;
+}
+
+.primer-vista-text p {
+  text-align: center;
+  width: 75%;
+  font-size: 2rem;
   color: whitesmoke;
 }
 
